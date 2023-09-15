@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+    
+
+  .react-multi-carousel-list .react-multiple-carousel__arrow--left {
+    position: absolute;
+    z-index: 2 !important;
+    left: calc(0px + 1px) !important;
+    background-color: white;
+  
+  }
+  
+  .react-multi-carousel-list  .react-multiple-carousel__arrow::before {
+    color: black;
+    font-weight: 700;
+  }
+  
+  .react-multi-carousel-list .react-multi-carousel-track
+  .react-multiple-carousel__arrow:hover  .react-multiple-carousel__arrow::before {
+    color: white;
+    font-weight: 700;
+  }
+  
+  .react-multi-carousel-list .react-multiple-carousel__arrow--right {
+    position: absolute;
+    z-index: 2 !important;
+    right: calc(0px + 1px) !important;
+    background-color: white;
+  }
+  
+}
