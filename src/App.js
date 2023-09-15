@@ -11,7 +11,7 @@ function App() {
     title:"Top-Headlines",
     country:"us"
   }
-  let allnews = {
+  let allnews = { 
     type:"everything",
     title:"All News",
     country:""
