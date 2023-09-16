@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className=''>
-  <BrowserRouter>
+  <BrowserRouter basename="/monkeyNews">
   <Navbar/>
   <Routes>
     <Route path="/" element={<Home/>}></Route>
