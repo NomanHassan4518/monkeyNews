@@ -1,19 +1,18 @@
-import React, {  useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query'
+import Spinner from './Spinner';
 
 // import { data } from './Data';
 
 const AllNewsSlider = () => {
-    const [progress, setProgress] = useState(0)
     let topNews = {}
     let { data, isLoading } = useQuery({
         queryKey: ["top-headlines"],
         queryFn: () => {
-            setProgress(100)
             return axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=b4e92df4ad63422e820ec3184968894f")
                 .then((res) => res.data);
         
@@ -42,6 +41,9 @@ const AllNewsSlider = () => {
         }
     };
     const autoPlaySpeed = 3000
+    if(isLoading){
+        return <Spinner/>
+    }
     return (
         <div className=' grid grid-cols-1 z-10 mb-12 overflow-hidden  gap-1'>
             <Carousel responsive={responsive}
